@@ -18,10 +18,9 @@ from time import sleep
 # Here we use 3.3v as input voltage, so initializing the ADC pin need to use ADC.ATTN_11DB to be set 3V as reference voltage.
 # use keyword atten=ADC.ATTN_11DB to set the reference voltage to 3V
 
-pota = ADC(Pin(26), atten=ADC.ATTN_11DB)
-potb = ADC(Pin(25), atten=ADC.ATTN_11DB)
+pot = ADC(Pin(2), atten=ADC.ATTN_11DB)
 
 while True:
-    print(pota.read(), potb.read())
-    sleep(0.02)
+    print("Potentiometer analog value: {}".format(pot.read()))
+    sleep(0.2)
 
